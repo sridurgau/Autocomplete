@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style>
+  .center{
+
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+h2 {
+  color: black;
+  font-family: black;
+  font-size: 200%;
+}
+
+  </style>
+  <title>Word Search</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+  <script>
+  $( function() {
+    $( "#search" ).autocomplete({
+      source: "/search/",
+      minLength: 1,
+    });
+  });
+  </script>
+
+
+</head>
+<body>
+  <br>
+<div class="center">
+  <h2>Autocomplete Search Engine</h2>
+  <form action= "/searchresults" method= "GET">
+      <input id="search" type="text" size="60" placeholder="Enter the text" name="term" >
+      <pre> </pre>
+      <input type="submit" value="Search">
+  </form>
+</div>
+</body>
+</html>
